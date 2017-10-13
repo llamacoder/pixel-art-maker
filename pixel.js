@@ -12,16 +12,43 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   }
 
-  function setupPaintBarListener() {
-    let bar = document.querySelector('.paintRow');
-    bar.addEventListener("click", function() {
+  function setupPaintBarListeners() {
+    let bars = document.querySelectorAll('.paintRow');
+    bars[0].addEventListener("click", function() {
       changePaintbrushColor(event);
     });
+    bars[1].addEventListener("click", function() {
+      if (event.target.className.search("paintChip") !== -1) {
+        changePaintbrushColor(event);
+      } else if (event.target.className.search("paintBox") !== -1) {
+        selectPaintbrush();
+      } else if (event.target.className.search("eraseBox") !== -1) {
+        selectEraser();
+      } else if (event.target.className.search("saveBox") !== -1) {
+        saveArt();
+      } else if (event.target.className.search("musicBox") !== -1) {
+        toggleMusic();
+      }
+    });
+  }
+
+  function selectPaintbrush() {
+    alert("Selecting paintbrush");
+  }
+  function selectEraser() {
+    alert("Selecting eraser");
+  }
+  function saveArt() {
+    alert("Saving...");
+  }
+  function toggleMusic() {
+    alert("Toggling music");
   }
 
   function changePixelColor(event) {
     let pix = event.target;
     let newBorder = "1 solid " + gPaintColor;
+    // let paintBox = document.getELementById("paintBox");
     pix.style.backgroundColor = gPaintColor;
     pix.style.border = newBorder;
   }
@@ -48,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
 
-  addDivs(2414);
+  addDivs(660);
   setUpGridListener();
-  setupPaintBarListener();
+  setupPaintBarListeners();
 });
