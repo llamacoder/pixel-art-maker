@@ -6,7 +6,8 @@ html, body {
 }
 
 div {
- border: 1px solid white;
+ margin: 0;
+ padding: 0;
 }
 
 .container {
@@ -22,15 +23,20 @@ div {
  flex: 15 ;
  display: flex;
  border: 5px solid blue;
+ border-radius: 10px;
  padding: 5px;
  flex-wrap: wrap;
- box-sizing: content-box;
+ align-content: start;
+ align-items: stretch;
+ box-sizing: border-box;
 }
 
 .pixelSquare {
+  border: .1px solid white;
   height: 2.9%;
   width: 1.4%;
   background: #ddd;
+  box-sizing:border-box;
 }
 
 
