@@ -1,0 +1,40 @@
+body {
+  background-color: lightGrey;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: grey;
+  border: 1px grey solid;
+  box-shadow: 10px 10px 5px #888888;
+  height: 300px;
+  width: 500px;
+  max-width: 500px;
+  min-width: 500px;
+  margin: auto;
+}
+
+.grid {
+  /*border: 1px solid red;*/
+  background-color: grey;
+  height: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /*align-items: center;*/
+  /*justify-content: center;*/
+}
+
+.gridSquare {
+  backgroundColor = white;
+  /*paddingBottom = "40px";*/
+  float = "left";
+  margin-top: 1px;
+  margin-left: 1px;
+  margin-right: 1px;
+  margin-bottom: 1px;
+  flex: 1;
+  /*margin: 1px, 1px, 1px, 1px;*/
+
+}
