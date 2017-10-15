@@ -32,37 +32,41 @@ function addMusic() {
     bars[1].addEventListener("click", function() {
       if (event.target.className.search("paintChip") !== -1) {
         changePaintbrushColor(event);
-      } else if (event.target.id === "paintBox") {
+      } else if (event.target.parentElement.id === "paintButton") {
         selectPaintbrush();
-      } else if (event.target.id === "eraseBox") {
+      } else if (event.target.parentElement.id === "eraseButton") {
         selectEraser();
-      } else if (event.target.id === "saveBox") {
+      } else if (event.target.parentElement.id === "saveButton") {
         saveArt();
-      } else if (event.target.id === "musicBox") {
+      } else if (event.target.parentElement.id === "musicButton") {
         toggleMusic();
       }
     });
   }
 
   function selectPaintbrush() {
-    let box = document.querySelector("#paintBox");
-    box.className = box.className + " selected";
+    let box = document.querySelector("#paintButton");
+    box.classList.remove("white");
+    box.classList.add("yellow");
     gPaintOrErase = PAINT;
     unselectEraser();
   }
   function unselectPaintbrush() {
-    let box = document.querySelector("#paintBox");
-    box.classList.remove("selected");
+    let box = document.querySelector("#paintButton");
+    box.classList.remove("yellow");
+    box.classList.add("white");
   }
   function selectEraser() {
-    let box = document.querySelector("#eraseBox");
-    box.className = box.className + " selected";
+    let box = document.querySelector("#eraseButton");
+    box.classList.remove("white");
+    box.classList.add("yellow");
     gPaintOrErase = ERASE;
     unselectPaintbrush();
   }
   function unselectEraser() {
-    let box = document.querySelector("#eraseBox");
-    box.classList.remove("selected");
+    let box = document.querySelector("#eraseButton");
+    box.classList.remove("yellow");
+    box.classList.add("white");
   }
 
   function saveArt() {
