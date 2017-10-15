@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const PAINT = "paint";
   const ERASE = "erase";
   var gPaintColor = "#ff0000";
+  var gEraseColor = "#e0e0e0";
   var gPaintOrErase = PAINT;
 
   function setUpGridListener() {
@@ -20,42 +21,43 @@ document.addEventListener("DOMContentLoaded", function() {
     bars[1].addEventListener("click", function() {
       if (event.target.className.search("paintChip") !== -1) {
         changePaintbrushColor(event);
-      } else if (event.target.className.search("paintBox") !== -1) {
+      } else if (event.target.id === "paintBox") {
         selectPaintbrush();
-      } else if (event.target.className.search("eraseBox") !== -1) {
+      } else if (event.target.id === "eraseBox") {
         selectEraser();
-      } else if (event.target.className.search("saveBox") !== -1) {
+      } else if (event.target.id === "saveBox") {
         saveArt();
-      } else if (event.target.className.search("musicBox") !== -1) {
+      } else if (event.target.id === "musicBox") {
         toggleMusic();
       }
     });
   }
 
   function selectPaintbrush() {
-    alert("Selecting paintbrush");
+    gPaintOrErase = PAINT;
   }
   function selectEraser() {
-    alert("Selecting eraser");
+    gPaintOrErase = ERASE;
   }
+
   function saveArt() {
     alert("Saving...");
   }
+
   function toggleMusic() {
     alert("Toggling music");
   }
 
   function changePixelColor(event) {
     let pix = event.target;
-    let newBorder = "1 solid " + gPaintColor;
-    // let paintBox = document.getELementById("paintBox");
     pix.style.backgroundColor = gPaintColor;
-    pix.style.border = newBorder;
   }
 
   function changePaintbrushColor(event) {
     let pix = event.target;
+    let currentBox = document.getElementById("currentColorBox");
     gPaintColor = pix.style.backgroundColor;
+    currentBox.style.backgroundColor = gPaintColor;
   }
 
   function getPaintColor() {

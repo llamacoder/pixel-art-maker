@@ -3,17 +3,44 @@
   <head>
     <meta charset="utf-8">
     <title>Pixel Art Maker></title>
-    <link rel="stylesheet" href="pixel.css">
     <script type="text/javascript" src="pixel.js"></script>
+
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+     <link rel="stylesheet" href="./pixel.css">
+     <!--Import jQuery before materialize.js-->
+     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
   <body>
     <div class="container">
       <div class="titleBar">
+        <div class="titleBar red white-text center-align z-depth-3">Pixel Art</div>
+      </div>
 
+      <!-- TAP TARGET -->
+      <div class="fixed-action-btn" style="top:15px;right:100px">
+        <a id="menu" onclick="$('.tap-target').tapTarget('open')" class="waves-effect waves-light btn btn-floating cyan">
+          <i class="material-icons">info_outline</i>
+        </a>
       </div>
-      <div class="grid">
+
+      <!-- TAP TARGET CONTENT -->
+      <div class="tap-target cyan" data-activates="menu">
+        <div class="tap-target-content white-text">
+          <h5>Pixel Art</h5>
+          <p class="white-text">Welcome to Pixel Art!  Choose a color, paint some squares, and have fun!</p>
+        </div>
       </div>
-      <div class="paintRow">
+
+      <div class="grid grey z-depth-3">
+      </div>
+      <div class="paintRow teal lighten-4 z-depth-3">
         <div class="paintChip" style="background-color:green"></div>
         <div class="paintChip" style="background-color:red"></div>
         <div class="paintChip" style="background-color:khaki"></div>
@@ -39,8 +66,7 @@
         <div class="paintChip" style="background-color:lavender"></div>
         <div class="paintChip" style="background-color:lightgrey"></div>
       </div>
-      <div class="paintRow">
-        <div class="paintChip" style="background-color:ligthseagreen"></div>
+      <div class="paintRow teal lighten-4 z-depth-3">
         <div class="paintChip" style="background-color:lightsteelblue"></div>
         <div class="paintChip" style="background-color:maroon"></div>
         <div class="paintChip" style="background-color:mediumorchid"></div>
@@ -53,22 +79,22 @@
         <div class="paintChip" style="background-color:white"></div>
         <div class="paintChip" style="background-color:orange"></div>
         <div class="paintChip" style="background-color:yellow"></div>
-        <div class="currentColorLabel">
-          CURRENT COLOR:
+        <div class="white-text" id="currentColorLabel">
+          CURRENT COLOR>>
         </div>
-        <div class="currentColorBox">
+        <div id="currentColorBox">
 
         </div>
         <div id="paintBox">
 
         </div>
-        <div class="eraseBox">
+        <div id="eraseBox">
 
         </div>
-        <div class="saveBox">
+        <div id="saveBox">
 
         </div>
-        <div class="musicBox">
+        <div id="musicBox">
 
         </div>
       </div>
