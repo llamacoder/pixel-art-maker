@@ -81,11 +81,24 @@ div {
 	margin-right: 10px;
 }
 
+.tinyIcon {
+	font-size: 12px;
+}
+
 #paintButton {
   flex:1;
 	display:flex;
   height: 17px;
 	padding:0;
+	margin-left: 2px;
+}
+
+#saveButton {
+  flex:1;
+	display:flex;
+  height: 17px;
+	padding:0;
+	margin-left: 2px;
 }
 
 #eraseButton {
@@ -104,6 +117,10 @@ div {
 	padding:0;
 }
 
-.tinyIcon {
-	font-size: 12px;
+#fillButton {
+  flex:1;
+	display:flex;
+  height: 17px;
+	margin-left: 2px;
+	padding:0;
 }
