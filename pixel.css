@@ -81,33 +81,40 @@ div {
 }
 
 #paintBox {
-  flex:2;
+  flex:1;
   width: 100%;
   height: 100%;
-  background-color: red;
-  border: 0.1px solid blue;
+}
+
+#paintBox i {
+	font-size: 14px;
 }
 
 #eraseBox {
   flex:1;
   width: 100%;
   height: 100%;
-  background-color: green;
-  border: 0.1px solid blue;
+}
+
+#eraseBox i {
+	font-size: 14px;
 }
 
 #saveBox {
-  flex:1;
+  flex:2;
   width: 100%;
   height: 100%;
-  background-color: pink;
-  border: 0.1px solid blue;
+}
+
+#saveBox i {
+	font-size: 14px;
 }
 
 #musicBox {
   flex:1;
   width: 100%;
   height: 100%;
-  background-color: yellow;
-  border: 0.1px solid blue;
+}
+#musicBox i {
+	font-size: 14px;
 }

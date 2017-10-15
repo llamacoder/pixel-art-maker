@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const PAINT = "paint";
   const ERASE = "erase";
   var gPaintColor = "#ff0000";
-  var gEraseColor = "#e0e0e0";
+  var gEraseColor = "#ddd";
   var gPaintOrErase = PAINT;
 
   function setUpGridListener() {
@@ -50,7 +50,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
   function changePixelColor(event) {
     let pix = event.target;
-    pix.style.backgroundColor = gPaintColor;
+    if (gPaintOrErase === PAINT) {
+      pix.style.backgroundColor = gPaintColor;
+    } else {
+      pix.style.backgroundColor = gEraseColor;
+    }
   }
 
   function changePaintbrushColor(event) {
