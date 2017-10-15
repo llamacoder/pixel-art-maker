@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
   var gPaintColor = "#ff0000";
   var gEraseColor = "#ddd";
   var gPaintOrErase = PAINT;
+  var gMouseDown = false;
 
 function addMusic() {
   // add some music!
@@ -19,7 +20,17 @@ function addMusic() {
 
   function setUpGridListener() {
     let grid = document.querySelector('.grid');
-    grid.addEventListener("click", function() {
+    grid.addEventListener("mousedown", function() {
+      gMouseDown = true;
+      changePixelColor(event);
+    });
+    grid.addEventListener("mouseover", function() {
+      if (gMouseDown === true) {
+        changePixelColor(event);
+      };
+    });
+    grid.addEventListener("mouseup", function() {
+      gMouseDown = false;
       changePixelColor(event);
     });
   }
