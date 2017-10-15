@@ -34,10 +34,24 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   function selectPaintbrush() {
+    let box = document.querySelector("#paintBox");
+    box.className = box.className + " selected";
     gPaintOrErase = PAINT;
+    unselectEraser();
+  }
+  function unselectPaintbrush() {
+    let box = document.querySelector("#paintBox");
+    box.classList.remove("selected");
   }
   function selectEraser() {
+    let box = document.querySelector("#eraseBox");
+    box.className = box.className + " selected";
     gPaintOrErase = ERASE;
+    unselectPaintbrush();
+  }
+  function unselectEraser() {
+    let box = document.querySelector("#eraseBox");
+    box.classList.remove("selected");
   }
 
   function saveArt() {
