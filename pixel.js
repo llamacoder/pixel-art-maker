@@ -6,6 +6,17 @@ document.addEventListener("DOMContentLoaded", function() {
   var gEraseColor = "#ddd";
   var gPaintOrErase = PAINT;
 
+function addMusic() {
+  // add some music!
+  let myAudio = document.createElement('audio');
+  let myBody = document.querySelector("body");
+  myAudio.autoplay = false;
+  myAudio.loop = true;
+  myAudio.src = "./audio/02.mp3"
+  myAudio.controls = false;
+  myBody.appendChild(myAudio);
+}
+
   function setUpGridListener() {
     let grid = document.querySelector('.grid');
     grid.addEventListener("click", function() {
@@ -59,7 +70,12 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   function toggleMusic() {
-    alert("Toggling music");
+    let song = document.querySelector("audio");
+    if (song.paused) {
+      song.play();
+    } else {
+      song.pause();
+    }
   }
 
   function changePixelColor(event) {
@@ -98,4 +114,5 @@ document.addEventListener("DOMContentLoaded", function() {
   addDivs(660);
   setUpGridListener();
   setupPaintBarListeners();
+  addMusic();
 });
