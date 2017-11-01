@@ -27,8 +27,8 @@ div {
 
 .container {
  display: flex;
- height: 400px;
- width: 500px;
+ height: 600px;
+ width: 750px;
  flex-direction: column;
  padding: 5px;
  margin: auto;
